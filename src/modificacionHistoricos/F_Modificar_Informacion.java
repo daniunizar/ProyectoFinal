@@ -25,8 +25,8 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author daniu
+ * Esta claes permite modificar los registros de solicitudes de información existentes en la Base de Datos para corregir posibles errores.
+ * @author Daniel Marcos Muñoz
  */
 public class F_Modificar_Informacion extends javax.swing.JFrame {
 
@@ -249,6 +249,10 @@ public class F_Modificar_Informacion extends javax.swing.JFrame {
     private static javax.swing.JPanel panelFondo;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     * Este método extrae de la Base de Datos los valores del registro de información a modificar y los carga en los diferentes componentes del formulario para que el usuario pueda modificarlos.
+     * @param numRef Recibe por parámetro la clave primaria del registro a modificar.
+     */
     public void cargarDatos(int numRef) { //consulta a la base de datos con el NUM_REF de la celda seleccionada en la tabla del registro
         cargarComboBoxMedios();
         cargarComboBoxTemas();
@@ -277,6 +281,9 @@ public class F_Modificar_Informacion extends javax.swing.JFrame {
         ConexionBaseDatos.desconexionBaseDatos();
     }
 
+    /**
+     * Este método rellena el comboBox del formulario con los diferentes medios de solicitar informaición que constan en la Base de Datos.
+     */
     public void cargarComboBoxMedios() {
         try {
 
@@ -312,6 +319,9 @@ public class F_Modificar_Informacion extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * Este método carga en el comboBox del formulario los diferentes temas de información que constan en la Base de Datos.
+     */
     public void cargarComboBoxTemas() {
         try {
             listaTemas = new ArrayList<>();
@@ -345,6 +355,9 @@ public class F_Modificar_Informacion extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * Este método gestiona los colores del formulario en función de las preferencias del usuario.
+     */
     public static void establecerColor() {
         ColorInterfaz.dimeColores();
         Color colorFondo = ColorInterfaz.dimeColores()[0];

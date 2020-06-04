@@ -24,8 +24,9 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author daniu
+ * Esta clase permite modificar los valore sde los registros de venta de entradas existentes en la Base de Datos.
+ * Su utilidad es la de corregir datos erróneos.
+ * @author Daniel Marcos Muñoz
  */
 public class F_Modificar_Entradas extends javax.swing.JFrame {
 
@@ -268,7 +269,12 @@ public class F_Modificar_Entradas extends javax.swing.JFrame {
     private javax.swing.JSpinner spn_Exenciones;
     private javax.swing.JSpinner spn_precioTotal;
     // End of variables declaration//GEN-END:variables
-public void cargarDatos(int numRef) { //consulta a la base de datos con el NUM_REF de la celda seleccionada en la tabla del registro
+
+    /**
+     * Este método extrae de la Base de Datos los valores que posee el registro seleccionado para modificar, y los carga en un formulario para que el usuario los pueda alterar.
+     * @param numRef Recibe por parámetro la clave primaria del registro a modificar.
+     */
+    public void cargarDatos(int numRef) { //consulta a la base de datos con el NUM_REF de la celda seleccionada en la tabla del registro
         cargarComboBoxEntradas();
         ConexionBaseDatos.ConexionBaseDatos();
         Connection conexion = ConexionBaseDatos.getConnection();
@@ -297,6 +303,9 @@ public void cargarDatos(int numRef) { //consulta a la base de datos con el NUM_R
         ConexionBaseDatos.desconexionBaseDatos();
     }
 
+    /**
+     * Este método carga el comboBox del formulario de modificación con los diferentes tipos de entrada existentes en la Base de Datos.
+     */
     public void cargarComboBoxEntradas() {
         try {
 
@@ -331,6 +340,9 @@ public void cargarDatos(int numRef) { //consulta a la base de datos con el NUM_R
         }
     }
 
+    /**
+     * Este método gestiona los colores del formulario de modificación de registros de entradas en función de las preferencias del usuario.
+     */
     public static void establecerColor() {
         ColorInterfaz.dimeColores();
         Color colorFondo = ColorInterfaz.dimeColores()[0];

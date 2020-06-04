@@ -40,7 +40,7 @@ public class ConexionBaseDatos {
             System.out.println("Conexión con la base de datos establecida DESDE SU PROPIA CLASE");
         } catch (SQLException ex) {
             Logger.getLogger(ConexionBaseDatos.class.getName()).log(Level.SEVERE, null, ex);
-            System.out.println("Error al conectar con la base de datos");
+            System.out.println("Error al conectar con la base de datos.");
             JOptionPane.showMessageDialog(null, "Error en la conexión");
         }
     }

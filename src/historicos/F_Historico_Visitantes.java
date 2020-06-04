@@ -23,8 +23,9 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author daniu
+ * Esta clase muestra los registros de visitantes existentes en la Base de Datos.
+ * Su utilidad es la de permitir modificar y eliminar registros de visitantes con datos erróneos.
+ * @author Daniel Marcos Muñoz
  */
 public class F_Historico_Visitantes extends javax.swing.JFrame {
 
@@ -235,6 +236,9 @@ public class F_Historico_Visitantes extends javax.swing.JFrame {
     private static javax.swing.JTable tabla_Historico_Visitantes;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     * Este método extrae todos los registros de visitantes de la Base de Datos.
+     */
     public static void extraerDatosDeBase() {
         miLista = new ArrayList<>();
         ConexionBaseDatos.ConexionBaseDatos();
@@ -257,6 +261,9 @@ public class F_Historico_Visitantes extends javax.swing.JFrame {
         ConexionBaseDatos.desconexionBaseDatos();
     }
 
+    /**
+     * Este método rellena el jTable con la inforación extraída de la Base de Datos por el método extraerDatosDeBase().
+     */
     public static void rellenarTabla() {
         extraerDatosDeBase();
         String matrizDatos[][] = new String[miLista.size()][8]; //el segundo número es el número de campos
@@ -279,6 +286,10 @@ public class F_Historico_Visitantes extends javax.swing.JFrame {
         ));
     }
 
+    /**
+     * Este método procede a la eliminación, previa confirmación por parte del usuario, de los registros de visitantes que se le indiquen.
+     * @param indice Recibe por parámetro la clave primaria de los registros a eliminar.
+     */
     public void eliminarRegistrosTablaHistoricoVisitantes(int indice) {
         ConexionBaseDatos.ConexionBaseDatos();
         Connection conexion = ConexionBaseDatos.getConnection();
@@ -296,6 +307,11 @@ public class F_Historico_Visitantes extends javax.swing.JFrame {
         rellenarTabla();
     }
 
+    /**
+     * Este método permite modificar un registro a partir del propio jTable.
+     * Actualmente no tiene uso, dado que la actual forma de modificación se realiza a través de una nueva ventana con su propio formulario.
+     * Se conserva por posible utilidad futura, y no existe en el resto de clases 'Históricas'.
+     */
     public void actualizarRegistroTablaHistoricoVisitantes() {
         String NUM_REF, REF_VISITA, CANTIDAD;
         String FECHA, REF_SEXO, REF_RANGOEDAD, PROCEDENCIA_INTERNACIONAL, PROCEDENCIA;
@@ -335,6 +351,9 @@ public class F_Historico_Visitantes extends javax.swing.JFrame {
         rellenarTabla();
     }
 
+    /**
+     * Este método gestiona el color de los diferentes componentes del registro de visitantes en función de las preferencias del usuario.
+     */
     public static void establecerColor() {
         ColorInterfaz.dimeColores();
         Color colorFondo = ColorInterfaz.dimeColores()[0];

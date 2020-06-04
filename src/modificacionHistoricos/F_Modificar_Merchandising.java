@@ -24,8 +24,8 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author daniu
+ * Esta clase permite la modificación de los registros de venta de productos promocionales existentes en la Base de Datos, permitiendo así la subsanación de errores.
+ * @author Daniel Marcos Muñoz
  */
 public class F_Modificar_Merchandising extends javax.swing.JFrame {
 
@@ -272,6 +272,10 @@ public class F_Modificar_Merchandising extends javax.swing.JFrame {
     private javax.swing.JSpinner spn_precioTotal;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     * Este método recupera de la Base de Datos la información relativa al registro a modificar y la carga en los diferentes componentes del formulario para que el usuario pueda modificarla.
+     * @param numRef Recibe por parámetro la clave primaria del registro a modificar.
+     */
     public void cargarDatos(int numRef) { //consulta a la base de datos con el NUM_REF de la celda seleccionada en la tabla del registro
         cargarComboBoxConcepto();
         ConexionBaseDatos.ConexionBaseDatos();
@@ -301,6 +305,9 @@ public class F_Modificar_Merchandising extends javax.swing.JFrame {
         ConexionBaseDatos.desconexionBaseDatos();
     }
 
+    /**
+     * Este método rellena el comboBox del formulario con los tipos de productos promocionales existentes en la Base de Datos.
+     */
     public void cargarComboBoxConcepto() {
         try {
             //reseteamos la lista y los ítems del combo box
@@ -335,6 +342,9 @@ public class F_Modificar_Merchandising extends javax.swing.JFrame {
 
     }
 
+    /**
+     * Este método gestiona el color del formulario en función de las preferencias del usuario.
+     */
     public static void establecerColor() {
         ColorInterfaz.dimeColores();
         Color colorFondo = ColorInterfaz.dimeColores()[0];

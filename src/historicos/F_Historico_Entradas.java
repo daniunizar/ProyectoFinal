@@ -21,8 +21,9 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author daniu
+ * Esta clase muesta los registros correspondientes a la venta de entradas existentes en la base de datos por orden inverso de inserción.
+ * Su utilidad es la de seleccionar registros erróneos para su modificación o eliminación.
+ * @author Daniel Marcos Muñoz
  */
 public class F_Historico_Entradas extends javax.swing.JFrame {
 
@@ -215,6 +216,9 @@ public class F_Historico_Entradas extends javax.swing.JFrame {
     private static javax.swing.JTable tabla_Historico_Entradas;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     * Este método realiza una consulta a la Base de Datos y recibe de ella todos los registros de venta de entradas existentes.
+     */
     public static void extraerDatosDeBase() {
         miLista = new ArrayList<>();
         ConexionBaseDatos.ConexionBaseDatos();
@@ -238,6 +242,9 @@ public class F_Historico_Entradas extends javax.swing.JFrame {
         ConexionBaseDatos.desconexionBaseDatos();
     }
 
+    /**
+     * Este método inserta en un jTable todos los registros de venta de entradas recuperados de la Base de Datos por el método extraerDatosDeBase().
+     */
     public static void rellenarTabla() {
         extraerDatosDeBase();
         String matrizDatos[][] = new String[miLista.size()][6];//el segundo número es el número de campos
@@ -258,6 +265,10 @@ public class F_Historico_Entradas extends javax.swing.JFrame {
         ));
     }
 
+    /**
+     * Este método procede, previa confirmación por parte del usuario, a eliminar uno o más registros seleccionados de la tabla Registro_Entradas a partir de su clave primaria.
+     * @param indice Recibe por parámetro la clave primaria de los registros a eliminar.
+     */
     public void eliminarRegistros(int indice) {
         ConexionBaseDatos.ConexionBaseDatos();
         Connection conexion = ConexionBaseDatos.getConnection();
@@ -275,6 +286,9 @@ public class F_Historico_Entradas extends javax.swing.JFrame {
         rellenarTabla();
     }
 
+    /**
+     * Este método gestiona los colores de los componentes del registro de venta de entradas en función de las preferencias del usuario.
+     */
     public static void establecerColor() {
         ColorInterfaz.dimeColores();
         Color colorFondo = ColorInterfaz.dimeColores()[0];

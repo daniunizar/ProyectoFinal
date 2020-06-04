@@ -21,8 +21,9 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author daniu
+ * Esta clase muestra los registros de reservas existentes en la Base de Datos.
+ * Su utilidad radica en permitir la modificación o eliminación de registros de reservas con errores.
+ * @author Daniel Marcos Muñoz
  */
 public class F_Historico_Reservas extends javax.swing.JFrame {
 
@@ -217,6 +218,9 @@ public class F_Historico_Reservas extends javax.swing.JFrame {
     private static javax.swing.JTable tabla_Historico_Reservas;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     * Este método extrae de la Base de Datos todos los registros de la tabla Registro_Reservas.
+     */
     public static void extraerDatosDeBase() {
         miLista = new ArrayList<>();
         ConexionBaseDatos.ConexionBaseDatos();
@@ -239,6 +243,9 @@ public class F_Historico_Reservas extends javax.swing.JFrame {
         ConexionBaseDatos.desconexionBaseDatos();
     }
 
+    /**
+     * Este método rellena el jTable con la información de las reservas extraída de la Base de Datos por el método extraerDatosDeBase().
+     */
     public static void rellenarTabla() {
         extraerDatosDeBase();
         String matrizDatos[][] = new String[miLista.size()][11];//el segundo número es el número de campos
@@ -264,6 +271,10 @@ public class F_Historico_Reservas extends javax.swing.JFrame {
         ));
     }
 
+    /**
+     * Este método procede a la eliminación, previa confirmación por parte del usuario, de los registros de la tabla Registros_Reservas cuya clave primaria se le pase por parámetro.
+     * @param indice Recibe por parámetro la clave primaria de los registros a eliminar.
+     */
     public void eliminarRegistros(int indice) {
         ConexionBaseDatos.ConexionBaseDatos();
         Connection conexion = ConexionBaseDatos.getConnection();
@@ -281,6 +292,9 @@ public class F_Historico_Reservas extends javax.swing.JFrame {
         rellenarTabla();
     }
 
+    /**
+     * Este método gestiona el color de los componentes del registro de reservas en función de las preferencias del usuario.
+     */
     public static void establecerColor() {
         ColorInterfaz.dimeColores();
         Color colorFondo = ColorInterfaz.dimeColores()[0];

@@ -35,7 +35,11 @@ import javax.swing.JOptionPane;
 import registros.Registro_Entradas;
 
 /**
- * La clase F_Base es la clase principal de la apliación. Consistente en un JFrame, posee un panel con el formulario de registro de visitantes, otro con botones que abren el resto de formularios y un menú superior horizontal que permite acceder al resto de funcionalidades.
+ * La clase F_Base es la clase principal de la apliación. Consistente en un
+ * JFrame, posee un panel con el formulario de registro de visitantes, otro con
+ * botones que abren el resto de formularios y un menú superior horizontal que
+ * permite acceder al resto de funcionalidades.
+ *
  * @author Daniel Marcos Muñoz
  */
 public class F_Base extends javax.swing.JFrame {
@@ -75,6 +79,7 @@ public class F_Base extends javax.swing.JFrame {
             cargarComboBoxProcedencias();
         } catch (Exception e) {
             System.out.println("El sistema no pudo cargar la ventana principal, y se ha cerrado automáticamente para evitar que quede en segundo plano.");
+            JOptionPane.showMessageDialog(null, "Debido a un error al conectar con la Base de Datos la ventana principal no se ha podido cargar.\nLa aplicación se cerrará para evitar que quede abierta en segundo plano");
             System.exit(1);
         }
     }
@@ -990,7 +995,8 @@ public class F_Base extends javax.swing.JFrame {
      * procedencia de los visitantes es internacional.
      * @param PROCEDENCIA Indica la comunidad autónoma o país de procedencia de
      * los visitantes.
-     * @throws SQLException Excepción en caso de no poder conectar con la base de datos
+     * @throws SQLException Excepción en caso de no poder conectar con la base
+     * de datos
      */
     public void registrarVisitantes(int NUM_REF, int REF_VISITA, String FECHA, int CANTIDAD, String REF_SEXO, String REF_RANGOEDAD, String PROCEDENCIA_INTERNACIONAL, String PROCEDENCIA) throws SQLException {
         //Conexión a la base de datos
@@ -1285,7 +1291,8 @@ public class F_Base extends javax.swing.JFrame {
     }
 
     /**
-     * Método crea (si no existía) o muestra el formulario de personalización de los colores de la aplicación.
+     * Método crea (si no existía) o muestra el formulario de personalización de
+     * los colores de la aplicación.
      */
     public void abrirFormularioColores() {
         if (formularioColores == null) {
@@ -1296,8 +1303,13 @@ public class F_Base extends javax.swing.JFrame {
     }
 
     /**
-     * Método que, una vez escogida una preferencia de estilo de colores desede el menú de configuración, la guarda en la base de datos para su persistencia cuando se cierre la aplicación.
-     * @param preferencia Recibe por parámetro el número de preferencia: 1 para diseño original, 2 para colores cálidos, 3 para neutros, 4 para fríos y 5 para personalizados.
+     * Método que, una vez escogida una preferencia de estilo de colores desede
+     * el menú de configuración, la guarda en la base de datos para su
+     * persistencia cuando se cierre la aplicación.
+     *
+     * @param preferencia Recibe por parámetro el número de preferencia: 1 para
+     * diseño original, 2 para colores cálidos, 3 para neutros, 4 para fríos y 5
+     * para personalizados.
      */
     public void fijaPreferenciaColor(int preferencia) {
         ConexionBaseDatos.ConexionBaseDatos();
@@ -1317,7 +1329,9 @@ public class F_Base extends javax.swing.JFrame {
     }
 
     /**
-     * Método llamado al iniciarse la aplicación y que, tras consultar en la base de datos las preferencias de estilo de color guardadas, aplica un estido u otro en función de las mismas.
+     * Método llamado al iniciarse la aplicación y que, tras consultar en la
+     * base de datos las preferencias de estilo de color guardadas, aplica un
+     * estido u otro en función de las mismas.
      */
     public void cargarColoresInicio() {
         int configuracionColor = 0;

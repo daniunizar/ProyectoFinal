@@ -24,8 +24,8 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author daniu
+ * Esta clase permite modificar los registros relativos a la realización de reservas existentes en la Base de Datos, permitiendo la subsanación de posibles errores.
+ * @author Daniel Marcos Muñoz
  */
 public class F_Modificar_Reservas extends javax.swing.JFrame {
 
@@ -337,6 +337,10 @@ public class F_Modificar_Reservas extends javax.swing.JFrame {
     private static javax.swing.JTextArea txtArea_Observaciones;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     * Este método extrae de la Base de Datos la informacion relativa al registro a modificar, y la carga en los componentes del formulario para que el usuario pueda modificarla.
+     * @param numRef Recibe por parámetro la clave primaria del registro a modificar.
+     */
     public void cargarDatos(int numRef) { //consulta a la base de datos con el NUM_REF de la celda seleccionada en la tabla del registro
         cargarComboBoxActividades();
         ConexionBaseDatos.ConexionBaseDatos();
@@ -373,6 +377,9 @@ public class F_Modificar_Reservas extends javax.swing.JFrame {
         ConexionBaseDatos.desconexionBaseDatos();
     }
 
+    /**
+     * Este método carga el ComboBox del formulario con los diferentes tipos de actividades que constan en la Base de Datos.
+     */
     public void cargarComboBoxActividades() {
         try {
             //reseteamos la lista de procedencias y los ítems del combo box
@@ -406,6 +413,9 @@ public class F_Modificar_Reservas extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * Este método gestiona el color de los componentes del formulario en función de las preferencias del usuario.
+     */
     public static void establecerColor() {
         ColorInterfaz.dimeColores();
         Color colorFondo = ColorInterfaz.dimeColores()[0];

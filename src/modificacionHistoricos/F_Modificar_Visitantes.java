@@ -23,8 +23,8 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author daniu
+ * Esta clase permite la modificación de los registros de visitantes de la Base de Datos, permitiendo la subsanación de posibles errores.
+ * @author Daniel Marcos Muñoz
  */
 public class F_Modificar_Visitantes extends javax.swing.JFrame {
 
@@ -310,6 +310,10 @@ public class F_Modificar_Visitantes extends javax.swing.JFrame {
     private javax.swing.JSpinner spn_refVisita;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     * Este método recupera de la Base de Datos la información relativa al registro a modificar, y la carga en los componentes del formulario para que el usuario la pueda modificar.
+     * @param numRef Recibe por parámetro la clave primaria del registro a modificar.
+     */
     public void cargarDatos(int numRef) { //consulta a la base de datos con el NUM_REF de la celda seleccionada en la tabla del registro
         cargarComboBoxSexo();
         cargarComboBoxEdad();
@@ -347,6 +351,9 @@ public class F_Modificar_Visitantes extends javax.swing.JFrame {
         cmb_procedencia.setSelectedItem(registro.getProcedencia());
     }
 
+    /**
+     * Este método rellena el ComboBox del formulario con los ítems relativos a las procedencias. Si el CheckBox del formulario marca procedencia internacional, lo rellena con países. Si no, con comunidades autónomas.
+     */
     public void cargarComboBoxProcedencias() {
         try {
             //reseteamos la lista de procedencias y los ítems del combo box
@@ -382,6 +389,9 @@ public class F_Modificar_Visitantes extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * Este método rellena el comboBox del formulario con los sexos registrados en la Base de Datos.
+     */
     public void cargarComboBoxSexo() {
         try {
             listaSexo = new ArrayList<>();
@@ -414,6 +424,9 @@ public class F_Modificar_Visitantes extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * Este método carga el comboBox del formulario con los rangos de edad que constan en la Base de Datos.
+     */
     public void cargarComboBoxEdad() {
         try {
             listaRangoEdad = new ArrayList<>();
@@ -446,6 +459,9 @@ public class F_Modificar_Visitantes extends javax.swing.JFrame {
         }
     }
 
+    /**
+     * Este método gestiona el color de los componentes del formulario en función de las preferencias del usuario.
+     */
     public static void establecerColor() {
         ColorInterfaz.dimeColores();
         Color colorFondo = ColorInterfaz.dimeColores()[0];

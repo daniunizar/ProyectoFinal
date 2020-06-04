@@ -21,8 +21,9 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
- *
- * @author daniu
+ * Esta clase muestra los registros de ventas de productos promocionales existentes en la Base de Datos.
+ * Su utilidad es la de permitir realizar modificaciones o eliminaciones de registros erróneos.
+ * @author Daniel Marcos Muñoz
  */
 public class F_Historico_Merchandising extends javax.swing.JFrame {
 
@@ -215,6 +216,9 @@ public class F_Historico_Merchandising extends javax.swing.JFrame {
     private static javax.swing.JTable tabla_Historico_Merchandising;
     // End of variables declaration//GEN-END:variables
 
+    /**
+     * Este método extrae de la Base de Datos todos los registros existentes relacionados con la venta de productos promocionales.
+     */
     public static void extraerDatosDeBase() {
         miLista = new ArrayList<>();
         ConexionBaseDatos.ConexionBaseDatos();
@@ -238,6 +242,9 @@ public class F_Historico_Merchandising extends javax.swing.JFrame {
         ConexionBaseDatos.desconexionBaseDatos();
     }
 
+    /**
+     * Este método rellena el jTable con los registros de venta de productos promocionales extraídos de la Base de Datos por el método extraerDatosDeBase().
+     */
     public static void rellenarTabla() {
         extraerDatosDeBase();
         String matrizDatos[][] = new String[miLista.size()][6];//el segundo número es el número de campos
@@ -258,6 +265,10 @@ public class F_Historico_Merchandising extends javax.swing.JFrame {
         ));
     }
 
+    /**
+     * Este método procede a la eliminación, previa confirmación por parte del usuario, de los registros de venta de productos promocionales seleccionados.
+     * @param indice Recibe por parámetro la clave primaria del registroa eliminar.
+     */
     public void eliminarRegistros(int indice) {
         ConexionBaseDatos.ConexionBaseDatos();
         Connection conexion = ConexionBaseDatos.getConnection();
@@ -275,6 +286,9 @@ public class F_Historico_Merchandising extends javax.swing.JFrame {
         rellenarTabla();
     }
 
+    /**
+     * Este método gestiona el color de los componentes del registro de venta de productos promocionales en función de las preferencias del usuario.
+     */
     public static void establecerColor() {
         ColorInterfaz.dimeColores();
         Color colorFondo = ColorInterfaz.dimeColores()[0];
