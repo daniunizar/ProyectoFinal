@@ -110,7 +110,7 @@ public class F_Modificar_Visitantes extends javax.swing.JFrame {
         panelContenedor.add(lblCantidad);
 
         spn_Cantidad.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        spn_Cantidad.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        spn_Cantidad.setModel(new javax.swing.SpinnerNumberModel(0, 0, 999, 1));
         panelContenedor.add(spn_Cantidad);
 
         lblSexo.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N

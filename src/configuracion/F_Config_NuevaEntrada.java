@@ -59,12 +59,17 @@ public class F_Config_NuevaEntrada extends javax.swing.JFrame {
         lblConcepto.setText("Concepto:");
 
         campoConcepto.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        campoConcepto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                campoConceptoKeyTyped(evt);
+            }
+        });
 
         lblPrecio.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
         lblPrecio.setText("Precio:");
 
         campoPrecio.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        campoPrecio.setModel(new javax.swing.SpinnerNumberModel(0.0f, 0.0f, null, 1.0f));
+        campoPrecio.setModel(new javax.swing.SpinnerNumberModel(Float.valueOf(0.0f), Float.valueOf(0.0f), Float.valueOf(15.0f), Float.valueOf(1.0f)));
 
         btnRegistrar.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         btnRegistrar.setText("Registrar");
@@ -160,6 +165,11 @@ public class F_Config_NuevaEntrada extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
+    private void campoConceptoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoConceptoKeyTyped
+        // TODO add your handling code here:
+        comprobarDimensionTexto(campoConcepto.getText(), 25, evt);
+    }//GEN-LAST:event_campoConceptoKeyTyped
+
     /**
      * @param args the command line arguments
      */
@@ -244,6 +254,18 @@ public class F_Config_NuevaEntrada extends javax.swing.JFrame {
         campoPrecio.setValue(0);
     }
 
+      /**
+   * Métdo que controla la cantidad máxima de caracteres para cada campo en que el usuario puede introducir texto.
+   * @param textoAComprobar Recibe por parámetro el texto a comprobar, se debe extraer de cada campo con un método getText().
+   * @param cantidadCaracteresMaxima Recibe por parámetro la cantidad máxima de caracteres permitidos.
+   * @param evt Recibe por parámetro el evento que activa este control. Generalmente un evento de tipo key typed en el textField o textArea.
+   */
+    public void comprobarDimensionTexto(String textoAComprobar, int cantidadCaracteresMaxima, java.awt.event.KeyEvent evt) {
+        if (textoAComprobar.length() == cantidadCaracteresMaxima) {
+            evt.consume();
+        }
+    }
+    
     /**
      * Este método gestiona el color de los componentes del formulario en función de las perferencias del usuario.
      */

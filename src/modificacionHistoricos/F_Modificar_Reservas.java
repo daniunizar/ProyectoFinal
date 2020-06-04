@@ -24,7 +24,10 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
- * Esta clase permite modificar los registros relativos a la realización de reservas existentes en la Base de Datos, permitiendo la subsanación de posibles errores.
+ * Esta clase permite modificar los registros relativos a la realización de
+ * reservas existentes en la Base de Datos, permitiendo la subsanación de
+ * posibles errores.
+ *
  * @author Daniel Marcos Muñoz
  */
 public class F_Modificar_Reservas extends javax.swing.JFrame {
@@ -115,6 +118,11 @@ public class F_Modificar_Reservas extends javax.swing.JFrame {
         panelContenedor.add(lblEntidad);
 
         campo_Entidad.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        campo_Entidad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                campo_EntidadKeyTyped(evt);
+            }
+        });
         panelContenedor.add(campo_Entidad);
 
         lblActividad.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -138,6 +146,11 @@ public class F_Modificar_Reservas extends javax.swing.JFrame {
         panelContenedor.add(lblContacto);
 
         campo_Contacto.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        campo_Contacto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                campo_ContactoKeyTyped(evt);
+            }
+        });
         panelContenedor.add(campo_Contacto);
 
         lblCargo.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -145,6 +158,11 @@ public class F_Modificar_Reservas extends javax.swing.JFrame {
         panelContenedor.add(lblCargo);
 
         campo_Cargo.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        campo_Cargo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                campo_CargoKeyTyped(evt);
+            }
+        });
         panelContenedor.add(campo_Cargo);
 
         lblTlf.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -152,6 +170,11 @@ public class F_Modificar_Reservas extends javax.swing.JFrame {
         panelContenedor.add(lblTlf);
 
         campo_Tlf.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        campo_Tlf.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                campo_TlfKeyTyped(evt);
+            }
+        });
         panelContenedor.add(campo_Tlf);
 
         lblMail.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -159,6 +182,11 @@ public class F_Modificar_Reservas extends javax.swing.JFrame {
         panelContenedor.add(lblMail);
 
         campo_Email.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
+        campo_Email.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                campo_EmailKeyTyped(evt);
+            }
+        });
         panelContenedor.add(campo_Email);
 
         lblObservaciones.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -184,6 +212,11 @@ public class F_Modificar_Reservas extends javax.swing.JFrame {
         txtArea_Observaciones.setColumns(20);
         txtArea_Observaciones.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         txtArea_Observaciones.setRows(5);
+        txtArea_Observaciones.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtArea_ObservacionesKeyTyped(evt);
+            }
+        });
         jScrollPane1.setViewportView(txtArea_Observaciones);
 
         javax.swing.GroupLayout panelFondoLayout = new javax.swing.GroupLayout(panelFondo);
@@ -271,6 +304,36 @@ public class F_Modificar_Reservas extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnModificarActionPerformed
 
+    private void campo_EntidadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campo_EntidadKeyTyped
+        // TODO add your handling code here:
+        comprobarDimensionTexto(campo_Entidad.getText(), 50, evt);
+    }//GEN-LAST:event_campo_EntidadKeyTyped
+
+    private void campo_ContactoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campo_ContactoKeyTyped
+        // TODO add your handling code here:
+        comprobarDimensionTexto(campo_Contacto.getText(), 50, evt);
+    }//GEN-LAST:event_campo_ContactoKeyTyped
+
+    private void campo_CargoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campo_CargoKeyTyped
+        // TODO add your handling code here:
+        comprobarDimensionTexto(campo_Cargo.getText(), 50, evt);
+    }//GEN-LAST:event_campo_CargoKeyTyped
+
+    private void campo_TlfKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campo_TlfKeyTyped
+        // TODO add your handling code here:
+                comprobarDimensionTexto(campo_Tlf.getText(), 9, evt);
+    }//GEN-LAST:event_campo_TlfKeyTyped
+
+    private void campo_EmailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campo_EmailKeyTyped
+        // TODO add your handling code here:
+         comprobarDimensionTexto(campo_Email.getText(), 50, evt);
+    }//GEN-LAST:event_campo_EmailKeyTyped
+
+    private void txtArea_ObservacionesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtArea_ObservacionesKeyTyped
+        // TODO add your handling code here:
+         comprobarDimensionTexto(txtArea_Observaciones.getText(), 255, evt);
+    }//GEN-LAST:event_txtArea_ObservacionesKeyTyped
+
     /**
      * @param args the command line arguments
      */
@@ -338,8 +401,12 @@ public class F_Modificar_Reservas extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     /**
-     * Este método extrae de la Base de Datos la informacion relativa al registro a modificar, y la carga en los componentes del formulario para que el usuario pueda modificarla.
-     * @param numRef Recibe por parámetro la clave primaria del registro a modificar.
+     * Este método extrae de la Base de Datos la informacion relativa al
+     * registro a modificar, y la carga en los componentes del formulario para
+     * que el usuario pueda modificarla.
+     *
+     * @param numRef Recibe por parámetro la clave primaria del registro a
+     * modificar.
      */
     public void cargarDatos(int numRef) { //consulta a la base de datos con el NUM_REF de la celda seleccionada en la tabla del registro
         cargarComboBoxActividades();
@@ -378,7 +445,8 @@ public class F_Modificar_Reservas extends javax.swing.JFrame {
     }
 
     /**
-     * Este método carga el ComboBox del formulario con los diferentes tipos de actividades que constan en la Base de Datos.
+     * Este método carga el ComboBox del formulario con los diferentes tipos de
+     * actividades que constan en la Base de Datos.
      */
     public void cargarComboBoxActividades() {
         try {
@@ -414,7 +482,25 @@ public class F_Modificar_Reservas extends javax.swing.JFrame {
     }
 
     /**
-     * Este método gestiona el color de los componentes del formulario en función de las preferencias del usuario.
+     * Métdo que controla la cantidad máxima de caracteres para cada campo en
+     * que el usuario puede introducir texto.
+     *
+     * @param textoAComprobar Recibe por parámetro el texto a comprobar, se debe
+     * extraer de cada campo con un método getText().
+     * @param cantidadCaracteresMaxima Recibe por parámetro la cantidad máxima
+     * de caracteres permitidos.
+     * @param evt Recibe por parámetro el evento que activa este control.
+     * Generalmente un evento de tipo key typed en el textField o textArea.
+     */
+    public void comprobarDimensionTexto(String textoAComprobar, int cantidadCaracteresMaxima, java.awt.event.KeyEvent evt) {
+        if (textoAComprobar.length() == cantidadCaracteresMaxima) {
+            evt.consume();
+        }
+    }
+
+    /**
+     * Este método gestiona el color de los componentes del formulario en
+     * función de las preferencias del usuario.
      */
     public static void establecerColor() {
         ColorInterfaz.dimeColores();

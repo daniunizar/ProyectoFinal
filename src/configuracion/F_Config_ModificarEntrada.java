@@ -68,7 +68,7 @@ public class F_Config_ModificarEntrada extends javax.swing.JFrame {
         lblPrecio.setText("Precio:");
 
         campoPrecio.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        campoPrecio.setModel(new javax.swing.SpinnerNumberModel(0.0f, 0.0f, null, 1.0f));
+        campoPrecio.setModel(new javax.swing.SpinnerNumberModel(Float.valueOf(0.0f), Float.valueOf(0.0f), Float.valueOf(15.0f), Float.valueOf(1.0f)));
 
         btnModificar.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
         btnModificar.setText("Modificar");

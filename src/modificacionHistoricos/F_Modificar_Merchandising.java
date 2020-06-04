@@ -88,7 +88,7 @@ public class F_Modificar_Merchandising extends javax.swing.JFrame {
         panelContenedor.add(lblPedido);
 
         spn_numPed.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        spn_numPed.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        spn_numPed.setModel(new javax.swing.SpinnerNumberModel(0, 0, 999999999, 1));
         panelContenedor.add(spn_numPed);
 
         lblFecha.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -113,7 +113,7 @@ public class F_Modificar_Merchandising extends javax.swing.JFrame {
         panelContenedor.add(lblCantidad);
 
         spn_Cantidad.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        spn_Cantidad.setModel(new javax.swing.SpinnerNumberModel(0, 0, null, 1));
+        spn_Cantidad.setModel(new javax.swing.SpinnerNumberModel(0, 0, 999, 1));
         panelContenedor.add(spn_Cantidad);
 
         lblTotal.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
@@ -121,7 +121,7 @@ public class F_Modificar_Merchandising extends javax.swing.JFrame {
         panelContenedor.add(lblTotal);
 
         spn_precioTotal.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
-        spn_precioTotal.setModel(new javax.swing.SpinnerNumberModel(0.0f, 0.0f, null, 1.0f));
+        spn_precioTotal.setModel(new javax.swing.SpinnerNumberModel(Float.valueOf(0.0f), Float.valueOf(0.0f), Float.valueOf(99999.99f), Float.valueOf(1.0f)));
         panelContenedor.add(spn_precioTotal);
 
         btnModificar.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N

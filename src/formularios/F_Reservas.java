@@ -23,7 +23,9 @@ import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
- * Esta clase gestiona la introducción de nuevas reservas al museo en la Base de Datos.
+ * Esta clase gestiona la introducción de nuevas reservas al museo en la Base de
+ * Datos.
+ *
  * @author Daniel Marcos Muñoz
  */
 public class F_Reservas extends javax.swing.JFrame {
@@ -94,6 +96,11 @@ public class F_Reservas extends javax.swing.JFrame {
         jScrollPane1.setViewportView(textAreaDisponibilidad);
 
         campoEntidad.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        campoEntidad.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                campoEntidadKeyTyped(evt);
+            }
+        });
 
         lblEntidad.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lblEntidad.setText("Entidad:");
@@ -108,26 +115,51 @@ public class F_Reservas extends javax.swing.JFrame {
         lblContacto.setText("Contacto:");
 
         campoContacto.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        campoContacto.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                campoContactoKeyTyped(evt);
+            }
+        });
 
         lblCargo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lblCargo.setText("Cargo:");
 
         campoCargo.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        campoCargo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                campoCargoKeyTyped(evt);
+            }
+        });
 
         lblTlf.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lblTlf.setText("Teléfono:");
 
         campoTlf.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        campoTlf.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                campoTlfKeyTyped(evt);
+            }
+        });
 
         lblMail.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         lblMail.setText("E-Mail:");
 
         campoMail.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        campoMail.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                campoMailKeyTyped(evt);
+            }
+        });
 
         textAreaObservaciones.setColumns(20);
         textAreaObservaciones.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         textAreaObservaciones.setRows(5);
         textAreaObservaciones.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Observaciones:", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 24))); // NOI18N
+        textAreaObservaciones.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                textAreaObservacionesKeyTyped(evt);
+            }
+        });
         jScrollPane2.setViewportView(textAreaObservaciones);
 
         btnRegistrar.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
@@ -147,6 +179,7 @@ public class F_Reservas extends javax.swing.JFrame {
         });
 
         spn_R_Cantidad.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
+        spn_R_Cantidad.setModel(new javax.swing.SpinnerNumberModel(0, 0, 999, 1));
 
         Cmb_R_Actividad.setFont(new java.awt.Font("Tahoma", 0, 24)); // NOI18N
         Cmb_R_Actividad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
@@ -301,6 +334,38 @@ public class F_Reservas extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnRegistrarActionPerformed
 
+    private void campoEntidadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoEntidadKeyTyped
+        // TODO add your handling code here:
+        comprobarDimensionTexto(campoEntidad.getText(), 50, evt);
+    }//GEN-LAST:event_campoEntidadKeyTyped
+
+    private void campoContactoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoContactoKeyTyped
+        // TODO add your handling code here:
+        comprobarDimensionTexto(campoContacto.getText(), 50, evt);
+    }//GEN-LAST:event_campoContactoKeyTyped
+
+    private void campoCargoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoCargoKeyTyped
+        // TODO add your handling code here:
+        comprobarDimensionTexto(campoCargo.getText(), 50, evt);
+
+    }//GEN-LAST:event_campoCargoKeyTyped
+
+    private void campoTlfKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoTlfKeyTyped
+        // TODO add your handling code here:
+        comprobarDimensionTexto(campoTlf.getText(), 9, evt);
+    }//GEN-LAST:event_campoTlfKeyTyped
+
+    private void campoMailKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_campoMailKeyTyped
+        // TODO add your handling code here:
+        comprobarDimensionTexto(campoMail.getText(), 50, evt);
+
+    }//GEN-LAST:event_campoMailKeyTyped
+
+    private void textAreaObservacionesKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_textAreaObservacionesKeyTyped
+        // TODO add your handling code here:
+        comprobarDimensionTexto(textAreaObservaciones.getText(), 255, evt);
+    }//GEN-LAST:event_textAreaObservacionesKeyTyped
+
     /**
      * @param args the command line arguments
      */
@@ -365,7 +430,8 @@ public class F_Reservas extends javax.swing.JFrame {
     // End of variables declaration//GEN-END:variables
 
     /**
-     * Este método limpia el formulario de gestión de reservas resetando sus componentes.
+     * Este método limpia el formulario de gestión de reservas resetando sus
+     * componentes.
      */
     public void limpiarFormularioReservas() {
         //resetear calendario reservas... cómo???
@@ -380,9 +446,13 @@ public class F_Reservas extends javax.swing.JFrame {
     }
 
     /**
-     * Este método comprueba, mediante la realización de una consulta a la Base de Datos, la disponibilidad de una fecha.
-     * En caso de estar disponible se hace saber al usuario, y de no estarlo se informa de la entidad y actividad que han reservado ese día.
-     * @throws SQLException Puede lanzar excepciones de conectividad con la Base de Datos.
+     * Este método comprueba, mediante la realización de una consulta a la Base
+     * de Datos, la disponibilidad de una fecha. En caso de estar disponible se
+     * hace saber al usuario, y de no estarlo se informa de la entidad y
+     * actividad que han reservado ese día.
+     *
+     * @throws SQLException Puede lanzar excepciones de conectividad con la Base
+     * de Datos.
      */
     public void comprobarDisponibilidad() throws SQLException {
         ArrayList<Reserva> listaCoincidencias = new ArrayList<>();
@@ -417,7 +487,9 @@ public class F_Reservas extends javax.swing.JFrame {
     }
 
     /**
-     * Método que asigna al nuevo registro de reserva su Clave Primaria, previa consulta a la Base de Datos.
+     * Método que asigna al nuevo registro de reserva su Clave Primaria, previa
+     * consulta a la Base de Datos.
+     *
      * @return Devuelve un entero con la clave primaria del nuevo registro.
      */
     public int asignarNUM_REF_Registro_Reservas() {
@@ -452,18 +524,31 @@ public class F_Reservas extends javax.swing.JFrame {
 
     /**
      * Método que realiza el ingreso en la Base de Datos de una nueva reserva.
-     * @param num_ref Este valor es la clave primaria del nuevo registro de reserva y se obtiene del método asignarNUM_REF_Registro_Reservas.
-     * @param fecha_tramitacion Es la fecha de tramitación de la reserva, se obtiene de la fecha del sistema en el momento de realizar el registro.
-     * @param fecha_reserva Es la fecha reservada, se obtiene del componente Calendar del formulario.
-     * @param entidad Es el nombre de la entidad que reserva. Se obtiene del formulario.
-     * @param actividad Es la actividad que realizará la entidad que reserva. Se obtiene del formulario.
-     * @param cantidad Es la cantidad de personas que acudirán. Se obtiene del formulario.
-     * @param contacto Es el nombre del contacto de la entidad que realizó la reserva. Se obtiene del formulario.
-     * @param cargo Es el cargo del contacto de la entidad que realizó la reserva. Se obtiene del formulario.
-     * @param tlf Es el teléfono del contacto de la entidad que realizó la reserva. Se obtiene del formulario.
-     * @param mail Es el E-Mail del contacto de la entidad que realizó la reserva. Se obtiene del formulario.
-     * @param observaciones Recoge observaciones no previstas en el resto de campos que afectan a la reserva. Se obtiene del formulario.
-     * @throws SQLException Puede lanzar excepciones de conectividad con la Base de Datos.
+     *
+     * @param num_ref Este valor es la clave primaria del nuevo registro de
+     * reserva y se obtiene del método asignarNUM_REF_Registro_Reservas.
+     * @param fecha_tramitacion Es la fecha de tramitación de la reserva, se
+     * obtiene de la fecha del sistema en el momento de realizar el registro.
+     * @param fecha_reserva Es la fecha reservada, se obtiene del componente
+     * Calendar del formulario.
+     * @param entidad Es el nombre de la entidad que reserva. Se obtiene del
+     * formulario.
+     * @param actividad Es la actividad que realizará la entidad que reserva. Se
+     * obtiene del formulario.
+     * @param cantidad Es la cantidad de personas que acudirán. Se obtiene del
+     * formulario.
+     * @param contacto Es el nombre del contacto de la entidad que realizó la
+     * reserva. Se obtiene del formulario.
+     * @param cargo Es el cargo del contacto de la entidad que realizó la
+     * reserva. Se obtiene del formulario.
+     * @param tlf Es el teléfono del contacto de la entidad que realizó la
+     * reserva. Se obtiene del formulario.
+     * @param mail Es el E-Mail del contacto de la entidad que realizó la
+     * reserva. Se obtiene del formulario.
+     * @param observaciones Recoge observaciones no previstas en el resto de
+     * campos que afectan a la reserva. Se obtiene del formulario.
+     * @throws SQLException Puede lanzar excepciones de conectividad con la Base
+     * de Datos.
      */
     public void registrarReserva(int num_ref, String fecha_tramitacion, String fecha_reserva, String entidad, String actividad, int cantidad, String contacto, String cargo, String tlf, String mail, String observaciones) throws SQLException {
         ConexionBaseDatos.ConexionBaseDatos();
@@ -491,7 +576,8 @@ public class F_Reservas extends javax.swing.JFrame {
     }
 
     /**
-     * Método que rellena de ítems el ComboBox que muestra las actividades que se realizarán con el grupo que realiza la reserva.
+     * Método que rellena de ítems el ComboBox que muestra las actividades que
+     * se realizarán con el grupo que realiza la reserva.
      */
     public void cargarComboBoxActividades() {
         try {
@@ -529,8 +615,21 @@ public class F_Reservas extends javax.swing.JFrame {
         }
     }
 
+  /**
+   * Métdo que controla la cantidad máxima de caracteres para cada campo en que el usuario puede introducir texto.
+   * @param textoAComprobar Recibe por parámetro el texto a comprobar, se debe extraer de cada campo con un método getText().
+   * @param cantidadCaracteresMaxima Recibe por parámetro la cantidad máxima de caracteres permitidos.
+   * @param evt Recibe por parámetro el evento que activa este control. Generalmente un evento de tipo key typed en el textField o textArea.
+   */
+    public void comprobarDimensionTexto(String textoAComprobar, int cantidadCaracteresMaxima, java.awt.event.KeyEvent evt) {
+        if (textoAComprobar.length() == cantidadCaracteresMaxima) {
+            evt.consume();
+        }
+    }
+
     /**
-     * Método que gestiona el color de los componentes del formulario de registro de reservas.
+     * Método que gestiona el color de los componentes del formulario de
+     * registro de reservas.
      */
     public static void establecerColor() {
         ColorInterfaz.dimeColores();
@@ -562,6 +661,5 @@ public class F_Reservas extends javax.swing.JFrame {
         btnDisponibilidad.setForeground(colorTexto);
         textAreaObservaciones.setForeground(colorTexto);
         textAreaDisponibilidad.setForeground(colorTexto);
-
     }
 }

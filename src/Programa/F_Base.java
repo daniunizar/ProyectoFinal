@@ -150,7 +150,6 @@ public class F_Base extends javax.swing.JFrame {
         coloresFrios = new javax.swing.JMenuItem();
         coloresPersonalizados = new javax.swing.JMenuItem();
         personalizarColor = new javax.swing.JMenuItem();
-        menu_Ayuda = new javax.swing.JMenu();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -434,7 +433,7 @@ public class F_Base extends javax.swing.JFrame {
         menu_Registros.setOpaque(false);
 
         menuH_Visitantes.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_V, java.awt.event.InputEvent.ALT_MASK));
-        menuH_Visitantes.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        menuH_Visitantes.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         menuH_Visitantes.setText("Visitantes");
         menuH_Visitantes.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -444,7 +443,7 @@ public class F_Base extends javax.swing.JFrame {
         menu_Registros.add(menuH_Visitantes);
 
         menuH_Info.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_I, java.awt.event.InputEvent.ALT_MASK));
-        menuH_Info.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        menuH_Info.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         menuH_Info.setText("Solicitudes de Información");
         menuH_Info.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -454,7 +453,7 @@ public class F_Base extends javax.swing.JFrame {
         menu_Registros.add(menuH_Info);
 
         menuH_Entradas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_E, java.awt.event.InputEvent.ALT_MASK));
-        menuH_Entradas.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        menuH_Entradas.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         menuH_Entradas.setText("Venta de Entradas");
         menuH_Entradas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -464,7 +463,7 @@ public class F_Base extends javax.swing.JFrame {
         menu_Registros.add(menuH_Entradas);
 
         menuH_Reservas.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_R, java.awt.event.InputEvent.ALT_MASK));
-        menuH_Reservas.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        menuH_Reservas.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         menuH_Reservas.setText("Reservas");
         menuH_Reservas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -474,7 +473,7 @@ public class F_Base extends javax.swing.JFrame {
         menu_Registros.add(menuH_Reservas);
 
         menuH_Merchandising.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_M, java.awt.event.InputEvent.ALT_MASK));
-        menuH_Merchandising.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        menuH_Merchandising.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         menuH_Merchandising.setText("Merchandising");
         menuH_Merchandising.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -491,7 +490,7 @@ public class F_Base extends javax.swing.JFrame {
         menu_Facturación.setOpaque(false);
 
         menu_facturacion.setAccelerator(javax.swing.KeyStroke.getKeyStroke(java.awt.event.KeyEvent.VK_F, java.awt.event.InputEvent.ALT_MASK));
-        menu_facturacion.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        menu_facturacion.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         menu_facturacion.setText("Ver facturación");
         menu_facturacion.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -507,7 +506,7 @@ public class F_Base extends javax.swing.JFrame {
         menu_Configuracion.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
         menu_Configuracion.setOpaque(false);
 
-        menu_configTipoEntrada.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        menu_configTipoEntrada.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         menu_configTipoEntrada.setText("Gestionar tipos de entrada");
         menu_configTipoEntrada.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -516,7 +515,7 @@ public class F_Base extends javax.swing.JFrame {
         });
         menu_Configuracion.add(menu_configTipoEntrada);
 
-        menu_confirMerchan.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        menu_confirMerchan.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         menu_confirMerchan.setText("Gestionar productos promocionales");
         menu_confirMerchan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -528,7 +527,7 @@ public class F_Base extends javax.swing.JFrame {
         menu_Color.setText("Estilo de interfaz");
         menu_Color.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
 
-        colorOriginal.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        colorOriginal.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         colorOriginal.setText("Original");
         colorOriginal.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -537,7 +536,7 @@ public class F_Base extends javax.swing.JFrame {
         });
         menu_Color.add(colorOriginal);
 
-        coloresCalidos.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        coloresCalidos.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         coloresCalidos.setText("Colores Cálidos");
         coloresCalidos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -546,7 +545,7 @@ public class F_Base extends javax.swing.JFrame {
         });
         menu_Color.add(coloresCalidos);
 
-        coloresNeutros.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        coloresNeutros.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         coloresNeutros.setText("Colores Neutros");
         coloresNeutros.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -555,7 +554,7 @@ public class F_Base extends javax.swing.JFrame {
         });
         menu_Color.add(coloresNeutros);
 
-        coloresFrios.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        coloresFrios.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         coloresFrios.setText("Colores Fríos");
         coloresFrios.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -564,7 +563,7 @@ public class F_Base extends javax.swing.JFrame {
         });
         menu_Color.add(coloresFrios);
 
-        coloresPersonalizados.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        coloresPersonalizados.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         coloresPersonalizados.setText("Colores Personalizados");
         coloresPersonalizados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -573,7 +572,7 @@ public class F_Base extends javax.swing.JFrame {
         });
         menu_Color.add(coloresPersonalizados);
 
-        personalizarColor.setFont(new java.awt.Font("Dialog", 1, 18)); // NOI18N
+        personalizarColor.setFont(new java.awt.Font("Dialog", 0, 18)); // NOI18N
         personalizarColor.setText("Editar Colores Personalizados");
         personalizarColor.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -585,12 +584,6 @@ public class F_Base extends javax.swing.JFrame {
         menu_Configuracion.add(menu_Color);
 
         menuBar_Menu.add(menu_Configuracion);
-
-        menu_Ayuda.setBackground(new java.awt.Color(133, 113, 64));
-        menu_Ayuda.setText("Ayuda");
-        menu_Ayuda.setFont(new java.awt.Font("Segoe UI", 0, 24)); // NOI18N
-        menu_Ayuda.setOpaque(false);
-        menuBar_Menu.add(menu_Ayuda);
 
         setJMenuBar(menuBar_Menu);
 
@@ -936,7 +929,6 @@ public class F_Base extends javax.swing.JFrame {
     private javax.swing.JMenuItem menuH_Visitantes;
     private javax.swing.JMenuItem menuReserva;
     private javax.swing.JMenuItem menuSalir;
-    private javax.swing.JMenu menu_Ayuda;
     private javax.swing.JMenu menu_Color;
     private javax.swing.JMenu menu_Configuracion;
     private javax.swing.JMenu menu_Facturación;
@@ -1259,7 +1251,7 @@ public class F_Base extends javax.swing.JFrame {
         if (informacion != null) {
             informacion.establecerColor();
         }
-        if (informacion != null) {
+        if (merchandising != null) {
             merchandising.establecerColor();
         }
         if (ventaEntradas != null) {

@@ -226,7 +226,7 @@
                   <Font name="Dialog" size="18" style="1"/>
                 </Property>
                 <Property name="model" type="javax.swing.SpinnerModel" editor="org.netbeans.modules.form.editors2.SpinnerModelEditor">
-                  <SpinnerModel initial="0.0" minimum="0.0" numberType="java.lang.Float" stepSize="1.0" type="number"/>
+                  <SpinnerModel initial="0.0" maximum="9999.99" minimum="0.0" numberType="java.lang.Float" stepSize="1.0" type="number"/>
                 </Property>
               </Properties>
             </Component>
