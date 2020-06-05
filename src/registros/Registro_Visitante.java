@@ -8,8 +8,8 @@ package registros;
 import java.util.Date;
 
 /**
- *
- * @author daniu
+ * Esta claes permite la generación de un registro de visitante bien para rellenar un jTable o para modificar un registro existente.
+ * @author Daniel Marcos Muñoz
  */
 public class Registro_Visitante {
     private int num_ref;
@@ -22,6 +22,18 @@ public class Registro_Visitante {
     String procedencia_Internacional;
     String procedencia;
 
+    /**
+     * Método constructo con todos los atributos.
+     * Fechas en formato String, necesario para rellenar el jTable del histórico.
+     * @param num_ref Recibe por parámetro la clave primaria del registro.
+     * @param ref_visita Recibe por parámetro la referencia al grupo de visitantes.
+     * @param fecha Recibe por parámetro la fecha de la visita en formato String.
+     * @param cantidad Recibe por parámetro la cantidad de visitantes de un sexo y rango de edad concreto que componen el grupo.
+     * @param ref_sexo Recibe por parámetro el sexo de los visitantes.
+     * @param ref_rangoEdad Recibe por parámetro el rango de edad de los visitantes.
+     * @param procedencia_Internacional Recibe por parámetro si el grupo de visitantes es de procedencia internacional o no.
+     * @param procedencia Recibe por parámetro la procedencia del grupo de visitantes.
+     */
     public Registro_Visitante(int num_ref, int ref_visita, String fecha, int cantidad, String ref_sexo, String ref_rangoEdad, String procedencia_Internacional, String procedencia) {
         this.num_ref = num_ref;
         this.ref_visita = ref_visita;
@@ -32,6 +44,18 @@ public class Registro_Visitante {
         this.procedencia_Internacional = procedencia_Internacional;
         this.procedencia = procedencia;
     }
+    /**
+     * Método constructor con todos los atributos.
+     * Las fechas son en formato Date, necesario para la modificación de registros.
+     * @param num_ref Recibe por parámetro la clave primaria del registro.
+     * @param ref_visita Recibe por parámetro la referencia al grupo de visitantes.
+     * @param fechaReal Recibe por parámetro la fecha de la visita en formato Date.
+     * @param cantidad Recibe por parámetro la cantidad de visitantes de un sexo y rango de edad concreto que componen el grupo.
+     * @param ref_sexo Recibe por parámetro el sexo de los visitantes.
+     * @param ref_rangoEdad Recibe por parámetro el rango de edad de los visitantes.
+     * @param procedencia_Internacional Recibe por parámetro si el grupo de visitantes es de procedencia internacional o no.
+     * @param procedencia Recibe por parámetro la procedencia del grupo de visitantes.
+     */
         public Registro_Visitante(int num_ref, int ref_visita, Date fechaReal, int cantidad, String ref_sexo, String ref_rangoEdad, String procedencia_Internacional, String procedencia) {
         this.num_ref = num_ref;
         this.ref_visita = ref_visita;

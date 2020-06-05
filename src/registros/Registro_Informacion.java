@@ -15,8 +15,8 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 /**
- *
- * @author daniu
+ * Esta clase permite genera un registro de información para su inserción en los jTable de los históricos y para su modificación.
+ * @author Daniel Marcos Muñoz
  */
 public class Registro_Informacion {
 
@@ -26,12 +26,29 @@ public class Registro_Informacion {
     String tema;
     Date fechaReal;
 
+    /**
+     * Método constructor con todos los atributos y fechas en formato String.
+     * Se utiliza para rellenar jTables.
+     * @param num_reg Recibe por parámetro la clave primaria del registro.
+     * @param fecha Recibe por parámetro la fecha de la solicitud de información en formato String.
+     * @param medio Recibe por parámetro el medio de solicitud empleado.
+     * @param tema Recibe por parámetro el tema sobre la consulta realizada.
+     */
     public Registro_Informacion(int num_reg, String fecha, String medio, String tema) {
         this.num_reg = num_reg;
         this.fecha = fecha;
         this.medio = medio;
         this.tema = tema;
     }
+    
+    /**
+     * Método constructor con todos los atributos y fechas en formato Date.
+     * Se utiliza para modificar registros.
+     * @param num_reg Recibe por parámetro la clave primaria del registro.
+     * @param fechaReal Recibe por parámetro la fecha de la solicitud de información en formate Date.
+     * @param medio Recibe por parámetro el medio de slicitud empleado.
+     * @param tema Recibe por parámetro el tema sobre la consulta realizada.
+     */
     public Registro_Informacion(int num_reg, Date fechaReal, String medio, String tema) {
         this.num_reg = num_reg;
         this.fechaReal = fechaReal;

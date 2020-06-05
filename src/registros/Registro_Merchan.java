@@ -8,8 +8,8 @@ package registros;
 import java.util.Date;
 
 /**
- *
- * @author daniu
+ * Esta clase permite generar un registro de venta de productos promocionales para su inserción en los jTable de los históricos.
+ * @author Daniel Marcos Muñoz
  */
 public class Registro_Merchan {
     int num_ref;
@@ -20,6 +20,16 @@ public class Registro_Merchan {
     int cantidad;
     float preciTotal;
 
+    /**
+     * Método constructor con todos los parámetros.
+     * Posee las fechas en formato String, necesario para rellenar los jTable de los históricos.
+     * @param num_ref Recibe por parámetro la clave primaria del registro.
+     * @param ref_pedido Rebibe por parámetro la referencia del pedido, común a todos los registros que conforman un pedido.
+     * @param fecha Recibe por parámetro la fecha de venta.
+     * @param concepto Recibe por parámetro el tipo de producto vendido.
+     * @param cantidad Recibe por parámetro la cantidad de productos vendidos.
+     * @param preciTotal Recibe por parámetro el precio total del producto seleccionado.
+     */
     public Registro_Merchan(int num_ref, int ref_pedido, String fecha, String concepto, int cantidad, float preciTotal) {
         this.num_ref = num_ref;
         this.ref_pedido = ref_pedido;
@@ -29,6 +39,16 @@ public class Registro_Merchan {
         this.preciTotal = preciTotal;
     }
     
+    /**
+     * Método constructor con todos los atributos.
+     * Posee las fechas en formato Date, útil para modificar los registros.
+     * @param num_ref Recibe por parámetro la clave primaria del registro.
+     * @param ref_pedido Recibe por parámetro el número de referencia del pedido.
+     * @param fechaReal Recibe por parámetro la fecha en formato Date de la venta.
+     * @param concepto Recibe por parámetro el tipo de producto vendido.
+     * @param cantidad Recibe por parámetro la cantidad de productos del tipo seleccionado vendidos.
+     * @param preciTotal Recibe por parámetro el precio del total de productos del tipo seleccionado vedidos.
+     */
         public Registro_Merchan(int num_ref, int ref_pedido, Date fechaReal, String concepto, int cantidad, float preciTotal) {
         this.num_ref = num_ref;
         this.ref_pedido = ref_pedido;
